@@ -1,4 +1,4 @@
-# 📋 Job Tracker (trckr.)
+# 📋 trckr. - Job Tracker 
 
 A clean and modern web-based application to **track your job hunting journey**.  
 It helps you stay organized with a dashboard, reminders, filtering tools, and visual analytics powered by Chart.js.  
