@@ -3,10 +3,10 @@
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: pastel --default, dracula --prefersdark;
 }
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

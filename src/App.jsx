@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
 import LandingPage from "./pages/landing/landingPage";
 import UserSetup from "./pages/userSetup/userSetup";
-import Layout from "./pages/layout";
+import Layout from "./pages/layout/layout";
 import Dashboard from "./pages/main/dashboard/dashboard";
 import JobTracker from "./pages/main/tracker/jobTracker";
 import ResumeBuilder from "./pages/main/builder/resumeBuilder";
