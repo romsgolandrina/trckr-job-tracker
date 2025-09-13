@@ -20,7 +20,7 @@ function App() {
 
   return (
     <UserProvider>
-      <div className="font-montserrat">
+      <div className="font-montserrat bg-base-100">
         <Router>
           <Routes>
             {/* Public routes */}

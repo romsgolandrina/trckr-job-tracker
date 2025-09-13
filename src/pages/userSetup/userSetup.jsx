@@ -38,7 +38,7 @@ const UserSetup = () => {
         <div className="flex flex-col justify-between h-full p-6 ">
           {/* logo */}
           <div>
-            <h1 className="text-4xl font-bold font-ubuntu tracking-wide">
+            <h1 className="text-4xl font-bold font-ubuntu tracking-wide text-black dark:text-white">
               trckr.
             </h1>
           </div>
@@ -47,8 +47,10 @@ const UserSetup = () => {
           <div className="flex flex-col gap-12">
             {/* Get Started */}
             <div className="flex flex-col gap-2 items-center">
-              <h1 className="text-4xl font-normal">Get Started</h1>
-              <p className="text-lg">
+              <h1 className="text-4xl font-normal text-black dark:text-white">
+                Get Started
+              </h1>
+              <p className="text-lg text-black dark:text-white">
                 Just a few details and we’re ready to go.
               </p>
             </div>
@@ -93,7 +95,7 @@ const UserSetup = () => {
                 />
                 <button
                   type="submit"
-                  className="btn w-full border-0 text-sm mt-[48px] hover:bg-blue-500"
+                  className="btn w-full border-0 text-sm mt-[48px] bg-black  hover:bg-blue-500 text-white"
                 >
                   Start Tracking
                 </button>
@@ -103,7 +105,7 @@ const UserSetup = () => {
 
           {/* Footer */}
           <div className="flex items-center justify-center">
-            <h1 className="text-sm">
+            <h1 className="text-sm text-black dark:text-white">
               © 2025 Jhon Rommel JR Golandrina. All rights reserved.
             </h1>
           </div>
