@@ -11,7 +11,7 @@ import "./App.css";
 
 function App() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "winter";
+    return localStorage.getItem("theme") || "pastel";
   });
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);

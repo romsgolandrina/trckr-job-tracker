@@ -1,7 +1,7 @@
 import React from "react";
 
-const resumeBuilder = () => {
+const ResumeBuilder = () => {
   return <div>resumeBuilder</div>;
 };
 
-export default resumeBuilder;
+export default ResumeBuilder;
