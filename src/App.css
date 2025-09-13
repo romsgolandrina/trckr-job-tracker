@@ -3,7 +3,7 @@
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: pastel --default, dracula --prefersdark;
+  themes: winter --default, dracula --prefersdark;
 }
 
 @custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));
@@ -122,19 +122,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-/* Remove Chrome autofill background */
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* background = white */
-  box-shadow: 0 0 0px 1000px white inset !important;
-  -webkit-text-fill-color: #000 !important; /* text color */
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-/* Dark mode autofill fix */
-.dark input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset !important;
-  box-shadow: 0 0 0px 1000px #1a1a1a inset !important;
-  -webkit-text-fill-color: #fff !important;
 }

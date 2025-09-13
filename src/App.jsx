@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
 import LandingPage from "./pages/landing/landingPage";
@@ -10,6 +10,14 @@ import ResumeBuilder from "./pages/main/builder/resumeBuilder";
 import "./App.css";
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "winter";
+  });
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <UserProvider>
       <div className="font-montserrat">
@@ -20,7 +28,10 @@ function App() {
             <Route path="/setup" element={<UserSetup />} />
 
             {/* Protected/Layout routes */}
-            <Route path="/" element={<Layout />}>
+            <Route
+              path="/"
+              element={<Layout theme={theme} setTheme={setTheme} />}
+            >
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="jobTracker" element={<JobTracker />} />
               <Route path="builder" element={<ResumeBuilder />} />
