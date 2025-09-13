@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import InputField from "../../components/ui/InputField";
 import JobHunt from "../../assets/JobHunt.svg";
 import { useUser } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const UserSetup = () => {
   const { userData, setUserData } = useUser();
@@ -12,6 +13,8 @@ const UserSetup = () => {
     setUserData((prev) => ({ ...prev, [name]: value }));
     setError((prev) => ({ ...prev, [name]: "" }));
   };
+
+  const navigate = useNavigate();
 
   const handleStartTracking = (e) => {
     e.preventDefault();
@@ -25,7 +28,7 @@ const UserSetup = () => {
 
     if (Object.keys(newError).length > 0) return;
 
-    console.log("SUBMITED!!!!!!!!");
+    navigate("/dashboard");
   };
 
   return (
