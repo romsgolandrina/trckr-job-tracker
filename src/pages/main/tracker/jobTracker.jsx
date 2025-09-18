@@ -1,34 +1,13 @@
-import React, { useMemo } from "react";
+import React from "react";
 import AddFilterSearch from "./addFilterSearch";
 import JobsTable from "./jobsTable";
-import { UseJobs } from "../../../context/JobsContext";
 
-const JobTracker = () => {
-  const { jobTrack } = UseJobs();
-
-  const ApplicationSent = useMemo(() => {
-    if (!jobTrack || jobTrack.length === 0) {
-      return [
-        { Label: "Total Applied", Value: "0" },
-        { Label: "Interview", Value: "0" },
-        { Label: "Offers", Value: "0" },
-      ];
-    }
-
-    const totalApplied = jobTrack.length;
-    const interviewCount = jobTrack.filter(
-      (job) => job.status?.toLowerCase() === "interview"
-    ).length;
-    const offerCount = jobTrack.filter(
-      (job) => job.status?.toLowerCase() === "offer"
-    ).length;
-
-    return [
-      { Label: "Total Applied", Value: totalApplied.toString() },
-      { Label: "Interview", Value: interviewCount.toString() },
-      { Label: "Offers", Value: offerCount.toString() },
-    ];
-  }, [jobTrack]);
+const jobTracker = () => {
+  const ApplicationSent = [
+    { Label: "Total Applied", Value: "3" },
+    { Label: "Interview", Value: "4" },
+    { Label: "Offers", Value: "5" },
+  ];
 
   return (
     <div className="w-full h-full">
@@ -39,11 +18,8 @@ const JobTracker = () => {
             📋 Job Applications Tracker
           </h1>
           <div className="flex flex-row gap-2">
-            {ApplicationSent.map(({ Label, Value }, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center rounded-md py-3 px-8 bg-neutral-100 dark:bg-base-300 text-black dark:text-white gap-1"
-              >
+            {ApplicationSent.map(({ Label, Value }) => (
+              <div className="flex flex-col items-center justify-center rounded-md py-3 px-8 bg-neutral-100 dark:bg-base-300 text-black dark:text-white gap-1">
                 <h1 className="text-2xl font-bold">{Value}</h1>
                 <p className="text-sm">{Label}</p>
               </div>
@@ -61,4 +37,4 @@ const JobTracker = () => {
   );
 };
 
-export default JobTracker;
+export default jobTracker;

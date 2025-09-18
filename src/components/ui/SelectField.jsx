@@ -1,4 +1,5 @@
 import React from "react";
+import { LuChevronDown } from "react-icons/lu";
 
 const SelectField = ({
   label,
@@ -7,7 +8,6 @@ const SelectField = ({
   onChange,
   options = [],
   required = false,
-  error,
 }) => {
   return (
     <div className="flex flex-col space-y-2 w-full">
@@ -20,24 +20,26 @@ const SelectField = ({
           {required && <span className="text-red-500">*</span>}
         </label>
       )}
-      <select
-        name={name}
-        value={value}
-        onChange={onChange}
-        className={`px-2 text-black dark:text-white bg-base-300 py-2 border-1 rounded-sm text-sm focus:outline-none focus:ring-1
-          ${error ? "border-red-500" : "border-base-300"}
-        `}
-      >
-        <option value="" disabled>
-          Select {label?.toLowerCase() || "an option"}
-        </option>
-        {options.map((option) => (
-          <option key={option} value={option} className="text-black">
-            {option}
+      <div className="relative inline-block w-full">
+        <select
+          name={name}
+          value={value}
+          onChange={onChange}
+          className="w-full px-3 appearance-none text-black dark:text-white bg-base-300 py-2 border-1 rounded-sm text-sm focus:outline-none focus:ring-1"
+        >
+          <option value="" disabled>
+            Select {label?.toLowerCase() || "an option"}
           </option>
-        ))}
-      </select>
-      {error && <span className="text-xs text-red-500">{error}</span>}
+          {options.map((option) => (
+            <option key={option} value={option} className="text-black">
+              {option}
+            </option>
+          ))}
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+          <LuChevronDown size={20} />
+        </div>
+      </div>
     </div>
   );
 };

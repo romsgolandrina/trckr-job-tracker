@@ -27,17 +27,14 @@ const AddApplicationModal = ({ isVisible, onClose }) => {
   };
 
   const handleSaveApplication = () => {
-    // Validation
     if (!formData.company || !formData.jobPosition || !formData.dateApplied) {
       setError("Please fill in all required fields");
       return;
     }
 
     try {
-      // Add the application
       addApplication(formData);
 
-      // Show success message
       Swal.fire({
         title: "Successfully Added!",
         text: `${formData.jobPosition} at ${formData.company} has been added to your applications.`,
@@ -46,7 +43,6 @@ const AddApplicationModal = ({ isVisible, onClose }) => {
         showConfirmButton: false,
       });
 
-      // Reset form and close modal
       setFormData(INITIAL_FORM_STATE);
       setError("");
       onClose();
