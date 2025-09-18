@@ -3,7 +3,11 @@
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: winter --default, dracula --prefersdark;
+  themes: pastel --default, dracula --prefersdark;
+}
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-ubuntu: "Ubuntu", sans-serif;
 }
 
 @custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));

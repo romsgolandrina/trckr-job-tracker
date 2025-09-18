@@ -7,7 +7,7 @@ import {
   LuMoon,
   LuSun,
 } from "react-icons/lu";
-import { useUser } from "../../context/UserContext";
+import { UseUser } from "../../context/UserContext";
 
 const SideBar = ({ theme, setTheme }) => {
   const navLinks = [
@@ -28,7 +28,7 @@ const SideBar = ({ theme, setTheme }) => {
     },
   ];
 
-  const { userData } = useUser();
+  const { userData } = UseUser();
 
   return (
     <div className="w-full h-full border-r-2 flex flex-col border-base-300 bg-base-100">
@@ -46,7 +46,7 @@ const SideBar = ({ theme, setTheme }) => {
             <li key={path}>
               <Link
                 to={path}
-                className="text-base font-medium py-2 px-4 rounded-lg hover:bg-base-300 text-black dark:text-white flex items-center gap-3"
+                className="text-sm font-medium py-2 px-4 rounded-lg hover:bg-base-300 text-black dark:text-white flex items-center gap-3"
               >
                 {Icons && <Icons size={20} />}
                 {label}
@@ -59,17 +59,17 @@ const SideBar = ({ theme, setTheme }) => {
       {/* Profile & Dark Mode Switch */}
       <div className="flex items-center justify-between border-t-2 border-base-300 py-8 px-6">
         <div className="flex flex-col">
-          <h1 className="text-base font-medium w-36 truncate text-black dark:text-white">
+          <h1 className="text-sm font-medium w-36 truncate text-black dark:text-white">
             {userData.firstName}&nbsp;{userData.lastName}
           </h1>
           <p className="text-sm text-black dark:text-white">
             {userData.desiredPosition}
           </p>
         </div>
-        <label className="swap swap-rotate rounded-lg p-2 border-2 border-base-300 hover:bg-base-300 text-black dark:text-white">
+        <label className="swap swap-rotate rounded-lg p-2 border border-base-300 hover:bg-base-300 text-black dark:text-white">
           <input
             type="checkbox"
-            onChange={(e) => setTheme(e.target.checked ? "dracula" : "winter")}
+            onChange={(e) => setTheme(e.target.checked ? "dracula" : "pastel")}
             checked={theme === "dracula"}
           />
           <LuSun size={20} className="swap-on" />
