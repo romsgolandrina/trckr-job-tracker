@@ -8,6 +8,7 @@ import Dashboard from "./pages/main/dashboard/dashboard";
 import JobTracker from "./pages/main/tracker/jobTracker";
 import ResumeBuilder from "./pages/main/builder/resumeBuilder";
 import "./App.css";
+import { JobsProvider } from "./context/JobsContext";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -19,27 +20,29 @@ function App() {
   }, [theme]);
 
   return (
-    <UserProvider>
-      <div className="font-montserrat bg-base-100">
-        <Router>
-          <Routes>
-            {/* Public routes */}
-            <Route index element={<LandingPage />} />
-            <Route path="/setup" element={<UserSetup />} />
+    <JobsProvider>
+      <UserProvider>
+        <div className="font-montserrat bg-base-100">
+          <Router>
+            <Routes>
+              {/* Public routes */}
+              <Route index element={<LandingPage />} />
+              <Route path="/setup" element={<UserSetup />} />
 
-            {/* Protected/Layout routes */}
-            <Route
-              path="/"
-              element={<Layout theme={theme} setTheme={setTheme} />}
-            >
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="jobTracker" element={<JobTracker />} />
-              <Route path="builder" element={<ResumeBuilder />} />
-            </Route>
-          </Routes>
-        </Router>
-      </div>
-    </UserProvider>
+              {/* Protected/Layout routes */}
+              <Route
+                path="/"
+                element={<Layout theme={theme} setTheme={setTheme} />}
+              >
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="jobTracker" element={<JobTracker />} />
+                <Route path="builder" element={<ResumeBuilder />} />
+              </Route>
+            </Routes>
+          </Router>
+        </div>
+      </UserProvider>
+    </JobsProvider>
   );
 }
 

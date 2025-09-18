@@ -7,7 +7,7 @@ import {
   LuMoon,
   LuSun,
 } from "react-icons/lu";
-import { useUser } from "../../context/UserContext";
+import { UseUser } from "../../context/UserContext";
 
 const SideBar = ({ theme, setTheme }) => {
   const navLinks = [
@@ -28,7 +28,7 @@ const SideBar = ({ theme, setTheme }) => {
     },
   ];
 
-  const { userData } = useUser();
+  const { userData } = UseUser();
 
   return (
     <div className="w-full h-full border-r-2 flex flex-col border-base-300 bg-base-100">

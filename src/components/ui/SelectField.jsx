@@ -24,7 +24,7 @@ const SelectField = ({
         name={name}
         value={value}
         onChange={onChange}
-        className={`px-3 text-black dark:text-white bg-base-300 py-2 border-1 rounded-sm text-sm focus:outline-none focus:ring-1
+        className={`px-2 text-black dark:text-white bg-base-300 py-2 border-1 rounded-sm text-sm focus:outline-none focus:ring-1
           ${error ? "border-red-500" : "border-base-300"}
         `}
       >

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import SideBar from "./sideBar";
-import { useUser } from "../../context/UserContext";
+import { UseUser } from "../../context/UserContext";
 import { useGreeting } from "../../utils/useGreetings";
 import { useMotivationalQuotes } from "../../utils/useQoutes";
 
 const Layout = ({ theme, setTheme }) => {
-  const { userData } = useUser();
+  const { userData } = UseUser();
 
   const qoute = useMotivationalQuotes();
   const greeting = useGreeting();
@@ -27,13 +27,13 @@ const Layout = ({ theme, setTheme }) => {
         <SideBar theme={theme} setTheme={setTheme} />
         {/* Pages */}
         <div className="flex flex-col h-full px-16">
-          <div className="flex justify-between items-center h-26">
+          <div className="flex justify-between items-center h-28">
             {/* greetings and motivational qoutes */}
-            <div className="w-1/2 h-full flex flex-col justify-center gap-1">
-              <h1 className="text-4xl text-black dark:text-white font-bold">
+            <div className="w-1/2 h-full flex flex-col justify-center">
+              <h1 className="text-3xl text-black dark:text-white font-bold">
                 {greeting}, {userData.firstName} 👋
               </h1>
-              <p className="text-base font-medium text-neutral-400 dark:text-white italic">
+              <p className="text-sm font-medium text-neutral-400 dark:text-white italic">
                 "{qoute}"
               </p>
             </div>

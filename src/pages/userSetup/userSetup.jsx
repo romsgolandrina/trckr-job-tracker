@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import InputField from "../../components/ui/InputField";
 import JobHunt from "../../assets/JobHunt.svg";
-import { useUser } from "../../context/UserContext";
+import { UseUser } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
 const UserSetup = () => {
-  const { userData, setUserData } = useUser();
+  const { userData, setUserData } = UseUser();
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
