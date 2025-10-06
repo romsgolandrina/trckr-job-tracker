@@ -1,4 +1,3 @@
-// utils/useMotivationalQuotes.js
 import { useState, useEffect } from "react";
 
 const quotes = [
