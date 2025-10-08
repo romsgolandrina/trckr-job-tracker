@@ -12,11 +12,11 @@ const TotalApplied = () => {
   ];
 
   return (
-    <div className="h-full flex flex-col py-4 px-6 justify-center gap-4">
-      <h1 className="text-lg font-semibold text-black dark:text-white">
+    <div className="h-full flex flex-col py-4 px-6  gap-4">
+      <h1 className="text-lg font-semibold text-black dark:text-white w-full">
         Jobs Applied
       </h1>
-      <div className="flex gap-6 items-center justify-center">
+      <div className="flex-1 flex gap-6 items-center justify-center">
         {totalAppli.map((t) => (
           <div
             key={t.value}

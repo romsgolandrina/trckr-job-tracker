@@ -95,7 +95,7 @@ const UserSetup = () => {
                 />
                 <button
                   type="submit"
-                  className="btn w-full border-0 text-sm mt-[48px] bg-black  hover:bg-blue-500 text-white rounded-lg"
+                  className="btn w-full border-0 text-sm mt-[48px] bg-black  hover:bg-blue-500 text-white rounded-md"
                 >
                   Start Tracking
                 </button>

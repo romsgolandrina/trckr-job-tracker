@@ -82,14 +82,16 @@ const YearReports = () => {
   });
 
   return (
-    <div className="p-4">
-      <h1 className="text-[#222222] flex flex-col gap-1 font-bold text-xl">
-        Monthly Applications - {""}
+    <div className="h-full flex flex-col py-4 px-6 gap-4">
+      <h1 className="w-full flex items-center text-lg font-semibold text-black dark:text-white">
+        Monthly Application -{" "}
         {date.toLocaleDateString("en-GB", {
           year: "numeric",
         })}
       </h1>
-      <Line data={data} options={options} />
+      <div className="flex-1">
+        <Line data={data} options={options} />
+      </div>
     </div>
   );
 };
