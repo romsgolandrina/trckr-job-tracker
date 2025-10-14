@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+.hero-section {
+  @apply bg-gradient-to-t from-white via-[#333333] to-[#4e4e4e] pt-16 px-16 rounded-4xl shadow-md flex flex-col space-y-14 items-center;
+}
+
+.badge-one {
+  @apply bg-white  text-black shadow-sm px-4 py-1 text-sm rounded-full font-medium text-center;
+}
+
+.grid-container {
+  @apply border border-gray-200 shadow-md hover:shadow-xl transition-shadow duration-500 rounded-2xl px-5 flex py-2 flex-col gap-6 items-center justify-center;
+}
+
+.get-started {
+  @apply text-white bg-gradient-to-b from-blue-300 to-indigo-600 font-medium py-3 px-6 rounded-md text-base border-b-2  border-white w-46;
+}
+
+.learn-more {
+  @apply text-black bg-white flex gap-1 px-6 py-3 rounded-md items-center text-base border-2 border-gray-200 font-medium w-46 justify-center;
+}

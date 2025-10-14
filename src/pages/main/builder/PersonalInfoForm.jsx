@@ -10,7 +10,6 @@ const PersonalInfoForm = () => {
       </h1>
       <form>
         <div className="flex flex-col gap-4 py-4">
-          {" "}
           {/* Full Names */}
           <div className="flex justify-between gap-4">
             <InputField label="First Name" placeholder="First name" />
